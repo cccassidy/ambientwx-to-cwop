@@ -45,7 +45,7 @@ def lambda_handler(event, context):
         round(raw_data['baromrelin'] * 33.8637526 * 10),
         srad_string,
         DEVICE_TYPE
-        )
+    )
     print(data)
     
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
