@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     DEVICE_MAC = '<DEVICE MAC ADDRESS>'
     DEVICE_TYPE = '<DEVICE TYPE ie aw2902c>'
     API_KEY = '<AMBIENTWX API KEY>'
-    APPLICATION_KEY = '<AMBIENTWX APPLICATION KEY>'
+    APPLICATION_KEY = 'edf1a355218446179f58e35a66506adde62b54aee1394faebd683358e9cc2666'   ### This is for use only with this API code
     CWOP_ID = '<CWOP_ID>'
     LATLON = '<LATLON_STRING>'
 
