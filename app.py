@@ -1,8 +1,10 @@
-import requests
 import json
 import socket
 import datetime
 import time
+import urllib3
+
+http = urllib3.PoolManager() 
 
 def lambda_handler(event, context):
 
@@ -14,8 +16,8 @@ def lambda_handler(event, context):
     LATLON = '<LATLON_STRING>'
 
     ### Collect Data
-    r = requests.get('https://api.ambientweather.net/v1/devices/{}?apiKey={}&applicationKey={}&limit=1'.format(DEVICE_MAC, API_KEY, APPLICATION_KEY))
-    raw_data = json.loads(r.content)[0]
+    r = http.request('GET','https://api.ambientweather.net/v1/devices/{}?apiKey={}&applicationKey={}&limit=1'.format(DEVICE_MAC, API_KEY, APPLICATION_KEY))
+    raw_data = json.loads(r.data)[0]
     print(raw_data)
     
     ### Confirm Ob Is Recent
